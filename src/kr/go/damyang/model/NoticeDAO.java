@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import kr.go.damyang.dto.NoticeDTO;
+import kr.go.yeosu.dto.NoticeDTO;
 
 public class NoticeDAO {
 	private Connection con = null;
@@ -100,4 +100,67 @@ public class NoticeDAO {
 		}
 		return cnt;
 	}
+	
+	public int delNotice(int no){
+		int cnt = 0;
+		try {
+			con = Maria.getConnection();
+			pstmt = con.prepareStatement(Maria.NOTICE_DELETE);
+			pstmt.setInt(1, no);
+			cnt = pstmt.executeUpdate();
+		}catch(ClassNotFoundException e){
+			System.out.println("드라이빙 로딩 실패");
+			e.printStackTrace();
+		}catch(SQLException e){
+			System.out.println("SQL 구문이 처리되지 못했습니다.");
+			e.printStackTrace();			
+		}catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");			
+		}finally{
+			Maria.close(pstmt, con);			
+		}
+		return cnt;		
+	}
+	
+	public int modifyNotice(kr.go.damyang.dto.NoticeDTO dto){
+		int cnt = 0;
+		try {
+			con = Maria.getConnection();
+			pstmt = con.prepareStatement(Maria.NOTICE_UPDATE);
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setInt(3, dto.getNo());
+			cnt = pstmt.executeUpdate();
+		}catch(ClassNotFoundException e){
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();			
+		}catch(SQLException e){
+			System.out.println("SQL 구문이 처리되지 못했습니다.");
+			e.printStackTrace();			
+		}catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");			
+		}finally{
+			Maria.close(pstmt, con);
+		}
+		return cut;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

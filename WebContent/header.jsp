@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<c:set var="path2" value="${request.getContextPath() }" />
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="<%=request.getContextPath() %>/">
@@ -58,14 +60,29 @@
   </div>
   <div class="navbar-end">
     <div class="navbar-item">
-      <div class="buttons">
-        <a class="button is-primary" href="<%=request.getContextPath() %>/user/join.jsp">
-          <strong>Sign up</strong>
-        </a>
-        <a class="button is-light" href="<%=request.getContextPath() %>/user/login.jsp">
-          Log in
-        </a>
-      </div>
+    	<c:if test="${empty sid }">
+	      <div class="buttons">
+	        <a class="button is-primary" href="${path2}/user/agree.jsp">
+	          <strong>Sign up</strong>
+	        </a>
+	        <a class="button is-light" href="${path2 }/user/login.jsp">
+	          Log in
+	        </a>
+	      </div>
+		</c:if>
+<%-- 		<c:if test="${not empty sid }">
+	      <div class="buttons">
+	        <a class="button is-primary" href="${path2}/userInfoCtrl.do">
+	          <strong>회원정보</strong>
+	        </a>
+	        <a class="button is-light" href="${path2 }/userLogoutCtrl.do">
+	          Logout
+	        </a>
+	        <c:if test="${sid.eqals("admin" }">
+	        <a class="button is-light" href="${path2 }/AdminCtrl.do">관리자</a>
+	        </c:if>
+	      </div>
+		</c:if>	 --%>	     
     </div>
   </div>
 </div>

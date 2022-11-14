@@ -18,25 +18,25 @@
 	<jsp:include page="${path1 }/header.jsp" />
 		<div class="content container" id="content">
 			<h2 class="title">로그인</h2>
-			<form name="frm1" id="frm1" action="<%=request.getContextPath() %>/UserLoginCtrl" method="post">
+			<form name="frm1" id="frm1" action="${path1 }/UserLoginCtrl.do" method="post" onsubmit="return joinCheck(this)">
 				<table class="table">
 					<tbody>
 						<tr>
 							<th>아이디</th>
 							<td>
-								<input type="text" name="userId" id="userId" placeholder="아이디 입력" class="form-control" autofocus required />
+								<input type="text" name="id" id="id" placeholder="아이디 입력" class="input" autofocus required />
 							</td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td><input type="password" name="userPw" id="userPw" placeholder="비밀번호 입력" class="form-control" required /></td>
+							<td><input type="password" name="pw" id="pw" placeholder="비밀번호 입력" class="input" required /></td>
 						</tr>
 					</tbody>
 				</table>
 				<div class="btn-group">
 					<input type="submit" name="submit-btn" class="btn btn-info" value="로그인">
 					<input type="reset" name="reset-btn" class="btn btn-info" value="취소">
-					<a href="<%=request.getContextPath() %>/user/join.jsp" class="btn btn-danger">회원가입</a>
+					<a href="<%=request.getContextPath() %>/user/agree.jsp" class="btn btn-danger">회원가입</a>
 				</div>
 			</form>	
 		</div>

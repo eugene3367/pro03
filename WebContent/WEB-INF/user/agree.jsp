@@ -8,15 +8,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>담양군 문화관광</title>
-    <jsp:include page="/head.jsp" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>회원 약관 동의</title>
+	<jsp:include page="/head.jsp" />
 </head>
 <body>
-  	<jsp:include page="${path1 }/header.jsp" />
-	<h2>${user}님의 테스트 입니다.</h2>
-	<img alt="" src="<%=request.getContextPath() %>/resource/visual09.jsp">
-	<jsp:include page="${path1 }/footer.jsp" />
+<%@ include file="../header.jsp" %>
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

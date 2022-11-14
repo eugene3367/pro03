@@ -18,3 +18,20 @@ DESC notice;
 INSERT INTO notice(title, content) VALUES("공지테스트제목1","공지테스트내용1");
 
 SELECT * FROM notice;
+
+CREATE TABLE USER(
+	id VARCHAR(30) PRIMARY KEY,
+	pw VARCHAR(300) NOT NULL,
+	NAME VARCHAR(50) NOT NULL,
+	POINT INT DEFAULT 0,
+	grade VARCHAR(4) DEFAULT "F",
+	visted INT DEFAULT 1,
+	tel VARCHAR(11),
+	addr VARCHAR(150),
+	email VARCHAR(100),
+	birth DATE,
+	regdate DATETIME DEFAULT NOW()
+);
+
+SELECT * FROM user;
+

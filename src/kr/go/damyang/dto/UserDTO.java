@@ -1,36 +1,53 @@
 package kr.go.damyang.dto;
 
 public class UserDTO {
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String address;
+	private String id;
+	private String pw;
+	private String name;
+	private int point;
+	private String grade;
+	private int visted;
 	private String tel;
-	private String regDate;
+	private String addr;
+	private String email;
+	private String birth;
+	private String regdate;
 	
-	public String getUserId() {
-		return userId;
+	public String getId() {
+		return id;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getPw() {
+		return pw;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getAddress() {
-		return address;
+	public int getPoint() {
+		return point;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	public int getVisted() {
+		return visted;
+	}
+	public void setVisted(int visted) {
+		this.visted = visted;
 	}
 	public String getTel() {
 		return tel;
@@ -38,12 +55,33 @@ public class UserDTO {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getRegDate() {
-		return regDate;
+	public String getAddr() {
+		return addr;
 	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	
+	
+	
 	
 	
 
