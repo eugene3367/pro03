@@ -33,5 +33,43 @@ CREATE TABLE USER(
 	regdate DATETIME DEFAULT NOW()
 );
 
+drop table user;
+
 SELECT * FROM user;
+delete from user where id="admin";
+UPDATE user SET grade="A" WHERE id="admin";
+
+
+insert into user(id, pw, name, grade, tel) values("admin","1234","고유진","A","01011111111");
+
+create table pic(
+	no int primary key auto_increment,
+	tourno varchar(20),
+	picname varchar(150)
+	pos int default 1 --position
+);
+desc pic;
+
+create table tour(
+	no int primary key auto_increment,
+	tourno varchar(20),
+	cate varchar(20),
+	place varchar(100),
+	comment1 varchar(1000);
+	comment2 varchar(1000)
+);
+desc tour;
+
+
+
+
+
+
+
+
+
+
+
+
+
 

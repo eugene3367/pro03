@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import kr.go.yeosu.dto.NoticeDTO;
+import kr.go.damyang.dto.NoticeDTO;
 
 public class NoticeDAO {
 	private Connection con = null;
@@ -142,25 +142,6 @@ public class NoticeDAO {
 		}finally{
 			Maria.close(pstmt, con);
 		}
-		return cut;
+		return cnt;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

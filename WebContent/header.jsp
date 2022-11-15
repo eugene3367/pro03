@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<c:set var="path2" value="${request.getContextPath() }" />
+<c:set var="path2" value="${pageContext.request.contextPath }" />
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="<%=request.getContextPath() %>/">
-      <img src="<%=request.getContextPath() %>/resource/logo.png" width="112" height="28">
+      <img src="./data/logo.png" width="112" height="28">
     </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -70,7 +70,7 @@
 	        </a>
 	      </div>
 		</c:if>
-<%-- 		<c:if test="${not empty sid }">
+  		<c:if test="${not empty sid }">
 	      <div class="buttons">
 	        <a class="button is-primary" href="${path2}/userInfoCtrl.do">
 	          <strong>회원정보</strong>
@@ -78,11 +78,11 @@
 	        <a class="button is-light" href="${path2 }/userLogoutCtrl.do">
 	          Logout
 	        </a>
-	        <c:if test="${sid.eqals("admin" }">
+	        <c:if test='${sid.equals("admin")}'>
 	        <a class="button is-light" href="${path2 }/AdminCtrl.do">관리자</a>
 	        </c:if>
 	      </div>
-		</c:if>	 --%>	     
+		</c:if>
     </div>
   </div>
 </div>

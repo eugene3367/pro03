@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <footer class="footer">
   <div class="content has-text-centered">
-  	<div class="ft_logo"><img src="<%=request.getContextPath() %>resource/footer_logo.gif" alt="하단로고"></div>
+  	<div class="ft_logo"><img src="./data/footer_logo.gif" alt="하단로고"></div>
   	<div class="sel_box">
         <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
             <option value="">부서별안내</option>

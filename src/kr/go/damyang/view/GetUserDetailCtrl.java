@@ -1,42 +1,37 @@
-package kr.go.damyang.controller;
+package kr.go.damyang.view;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.go.damyang.dto.UserDTO;
 import kr.go.damyang.model.UserDAO;
 
-import org.json.JSONObject;
 
-@WebServlet("/IdCheckCtrl.do")
-public class IdCheckCtrl extends HttpServlet {
-	private static final long serialVersionUID = 1L; 
-   
+@WebServlet("/GetUserDetailCtrl.do")
+public class GetUserDetailCtrl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String id = request.getParameter("id");
-		boolean result = false;
-		int cnt = 0;
-		UserDAO dao = new UserDAO();
-		cnt = dao.idCheckPro(id);
-		if(cnt>=1){	//이미 있는 아이디임
-			result = false;
-		} else {
-			result = true;
-		}
-		JSONObject json = new JSONObject();
-		json.put("result", result);
-		PrintWriter out = response.getWriter();
-		out.println(json.toString());
+		String id = (String) request.getParameter("id");
 		
+		UserDAO dao = new UserDAO();
+		UserDTO dto = dao.userInfo(id);
+		
+		//dao로 부터 받은 데이터를 view에 디스패치함
+		request.setAttribute("dto", dto);
+		
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/user/userDetail.jsp");
+		view.forward(request, response);
 	}
 
 }

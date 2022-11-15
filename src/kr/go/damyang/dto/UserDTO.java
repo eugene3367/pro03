@@ -6,7 +6,7 @@ public class UserDTO {
 	private String name;
 	private int point;
 	private String grade;
-	private int visted;
+	private int visited;
 	private String tel;
 	private String addr;
 	private String email;
@@ -43,11 +43,11 @@ public class UserDTO {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	public int getVisted() {
-		return visted;
+	public int getVisited() {
+		return visited;
 	}
-	public void setVisted(int visted) {
-		this.visted = visted;
+	public void setVisited(int visited) {
+		this.visited = visited;
 	}
 	public String getTel() {
 		return tel;
@@ -79,10 +79,4 @@ public class UserDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
-	
-	
-	
-	
-
 }

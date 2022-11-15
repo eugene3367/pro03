@@ -4,19 +4,20 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.util.*, java.lang.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
-<c:set var="path1" value="${request.getContextPath() }" />
+<c:set var="path1" value="<%=request.getContextPath()%>" />
+<%-- <c:set var="path1" value="${pageContext.request.contextPath }" />   --%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>로그인 페이지</title>
+    <title>로그인</title>
     <jsp:include page="/head.jsp" />
-<title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="${path1 }/header.jsp" />
-		<div class="content container" id="content">
+<jsp:include page="/header.jsp" />
+	<section class="section">
+		<div class="container">
 			<h2 class="title">로그인</h2>
 			<form name="frm1" id="frm1" action="${path1 }/UserLoginCtrl.do" method="post" onsubmit="return joinCheck(this)">
 				<table class="table">
@@ -24,7 +25,17 @@
 						<tr>
 							<th>아이디</th>
 							<td>
-								<input type="text" name="id" id="id" placeholder="아이디 입력" class="input" autofocus required />
+								<div class="from-row">
+									<input type="text" name="id" id="id" placeholder="아이디 입력" class="input" autofocus required />
+								</div>
+								<div>
+									<c:if test="${empty msg }">
+										<p></p>
+									</c:if>
+									<c:if test="${not empty msg }">
+										<p>${msg }</p>
+									</c:if>
+								</div>
 							</td>
 						</tr>
 						<tr>
@@ -40,6 +51,7 @@
 				</div>
 			</form>	
 		</div>
-	<jsp:include page="${path1 }/footer.jsp" />
+	</section>
+<jsp:include page="/footer.jsp" />
 </body>
 </html>

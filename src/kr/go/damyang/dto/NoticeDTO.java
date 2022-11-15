@@ -36,7 +36,5 @@ public class NoticeDTO {
 	}
 	public void setVisited(int visited) {
 		this.visited = visited;
-	}
-	
-	
+	}	
 }
