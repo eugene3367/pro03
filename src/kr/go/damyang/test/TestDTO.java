@@ -1,8 +1,9 @@
-package kr.go.damyang.dto;
+package kr.go.damyang.test;
 
 public class TestDTO {
 	private String name;
 	private int point;
+	
 	public String getName() {
 		return name;
 	}

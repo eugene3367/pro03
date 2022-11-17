@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+//하나의 텍스트 ajax로 보내기
 @WebServlet("/JSONTest1.do")
 public class JSONTest1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,11 +21,11 @@ public class JSONTest1 extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String result = "데이터";
+		String result = "텍스트 데이터";
 		JSONObject json = new JSONObject();
 		json.put("result", result);
 		PrintWriter out = response.getWriter();
-		out.println(json.toString());
+		out.println(json);
 	}
 
 }

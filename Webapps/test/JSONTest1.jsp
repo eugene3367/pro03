@@ -13,33 +13,81 @@
 <jsp:include page="/head.jsp" />
 </head>
 <body>
+<div class="container">
 	<h2 class="title">JSON(JavaScript Object Notation)</h2>
 	<p>자바스크립스의 객체 형태로 데이터를 교환하는 방식</p>
+	<br><hr><br>
 	<div id="js"></div>
-	<div id="con"></div>
-	<div id="con2"></div>
-	<script>$(document).ready(function(){
-		var obj = {name:"고유진", age:32};
-		$("#js").html("<p>이름 :"+"</p>");
-		
-	});
-	</script>
 	<script>
 	$(document).ready(function(){
-		var params = {name :"고유진"};
-		$.ajax{{
-			url:"${path1 }/JSONTest2.do",
-			type:"post",
-			dataType:"json",
-			data:params,
-			success.function(data){
-				console.log(data);
-				var user = data;
-				$("#con2").html("이름 : "+user.name+", 점수 : "+user.point);
-			}			
-		}};
+		//JSON = java MAP
+		var obj = {name:"고유진", age:32};
+		$("#js").html("<p>이름 : "+obj.name+"</p>");
+		$("#js").append("<p>나이 : "+obj.age+"</p>");
 	});
 	</script>
+	<br><hr><br>
+	<h2 class="title">JSON 단순 텍스트 데이터 받기</h2>
 	<div id="con"></div>
+	<script>
+	$(document).ready(function(){
+		$.ajax({
+			url:"${path1 }/JSONTest1.do",	//아이디가 전송되어질 곳
+			type:"post",	//전송방식
+			dataType:"json",	//데이터 반환 방식
+			success:function(result){
+				//console.log(result.result);
+				var test = result.result;
+				$("con").html(test);
+			}
+		});		
+	});
+	</script>
+	<br><hr><br>
+	<h2 class="title">JSON 하나의 객체 데이터 받기</h2>	
+	<div id="con2"></div>
+	<script>
+	$(document).ready(function(){
+		var params = { name: "고유진"}
+		$.ajax({
+			url:"${path 1}/JSONTest2.do",	//아이디가 전송되어질 곳
+			type:"post",	//전송방식
+			dataType:"json",	//데이터 반환 방식
+			success:function(data){
+				//console.log(data);
+				var user = data;
+				$("#con2").html("이름 : "+user.name+", 점수 : "+user.point);
+			}
+		});
+	});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
 </body>
 </html>
