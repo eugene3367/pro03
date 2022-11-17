@@ -14,12 +14,12 @@ public class TestDAO {
 	String sql = "";
 	
 
-	public TestDTO testDataOne(String string) {
+	public TestDTO testDataOne(String name){
 		TestDTO dto = new TestDTO();
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.TEST_SELECT_ONE);
-			pstmt.setString(1, );
+			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				dto.setName(rs.getString("name"));
@@ -33,6 +33,24 @@ public class TestDAO {
 		return dto;
 	}
 	
-
-
+	public ArrayList<TestDTO> testDataAll() {
+		ArrayList<TestDTO> list = new ArrayList<TestDTO>();
+		try {
+			con = Maria.getConnection();
+			pstmt = con.prepareStatement(Maria.TEST_SELECT_ALL);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				TestDTO dto = new TestDTO();
+				dto.setName(rs.getString("name"));
+				dto.setPoint(rs.getInt("point"));
+				list.add(dto);
+			}
+		} catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");
+		} finally {
+			Maria.close(rs, pstmt, con);
+		}
+		return list;
+	}
+	
 }

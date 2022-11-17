@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import kr.go.damyang.dto.UserDTO;
 import kr.go.damyang.model.UserDAO;
 
+
+
 @WebServlet("/UserInfoCtrl.do")
 public class UserInfoCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +27,7 @@ public class UserInfoCtrl extends HttpServlet {
 		UserDTO dto = dao.userInfo(id);
 		
 		//dao로 부터 받은 데이터를 view에 디스패치함
-				request.setAttribute("dto", dto);
+		request.setAttribute("dto", dto);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/user/userUpdate.jsp");
 		view.forward(request, response);

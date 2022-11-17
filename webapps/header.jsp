@@ -117,7 +117,7 @@
 		  		<c:if test="${not empty sid }">
 			      <div class="buttons">
 			        <a class="button is-info" href="${path2}/UserInfoCtrl.do">
-			          <strong>회원정보</strong>
+			          <strong>회원정보 보기</strong>
 			        </a>
 			        <a class="button is-focused" href="${path2 }/UserLogoutCtrl.do">
 			          Logout

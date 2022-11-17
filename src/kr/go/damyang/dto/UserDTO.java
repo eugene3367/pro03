@@ -79,4 +79,12 @@ public class UserDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	@Override
+	public String toString() {
+		return "UserDTO [id=" + id + ", pw=" + pw + ", name=" + name
+				+ ", point=" + point + ", grade=" + grade + ", visited="
+				+ visited + ", tel=" + tel + ", addr=" + addr + ", email="
+				+ email + ", birth=" + birth + ", regdate=" + regdate + "]";
+	}
+	
 }

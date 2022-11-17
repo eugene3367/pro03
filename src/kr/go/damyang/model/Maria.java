@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Maria {
-    static final String DRIVER = "org.mariadb.jdbc.Driver";
-    static final String URL = "jdbc:mariadb://127.0.0.1:3308/goverment?serverTimezone=Asia/Seoul";
-    static final String USER = "root";
-    static final String PW = "1234";
+    private static final String DRIVER = "org.mariadb.jdbc.Driver";
+    private static final String URL = "jdbc:mariadb://127.0.0.1:3308/goverment?serverTimezone=Asia/Seoul";
+    private static final String USER = "root";
+    private static final String PW = "1234";
     
 	final static String NOTICE_SELECT_ALL = "select * from notice order by regdate desc";
 	final static String NOTICE_VISITED_UPDATE = "update notice set visited = visited + 1 where no=?";

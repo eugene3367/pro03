@@ -1,14 +1,11 @@
 package kr.go.damyang.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import kr.go.damyang.dto.UserDTO;
 
+import org.jsoup.Connection;
+
 import com.crypto.util.AES256;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 public class UserDAO {
 	private Connection con = null;
