@@ -14,7 +14,8 @@
 <title>회원가입</title>
 <jsp:include page="/head.jsp" />
 <style>
-#id { width:300px; }
+.title { padding-top:36px; padding-bottom:20px; }
+#id { width:780px; float:left; margin-right:30px; margin-left:6px; }
 </style>
 </head>
 <body>

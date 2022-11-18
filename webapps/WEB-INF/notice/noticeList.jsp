@@ -12,14 +12,20 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>공지사항 목록</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	</head>
+    <jsp:include page="/head.jsp" />
+	<link rel="stylesheet" href="${path1 }/resource/datatables.min.css">
+	<script src="${path1 }/resource/datatables.min.js"></script>
+	<script>
+	$(document).ready( function () {
+	    $('#tb1').DataTable();
+	} );
+	</script>
 	<body>
 		<jsp:include page="/header.jsp" />
 		<section class="section">  
 			<div class="container">
 				<h1 class="title">공지사항 목록</h1>
-				<table class="table">
+				<table class="table is-fullwidth" id="tb1">
 					<thead>
 						<tr>
 							<th><abbr title="No">No</abbr></th>
@@ -38,11 +44,11 @@
 								</td>
 							</tr>
 						</c:forEach>
-						<%-- <c:if test="${list==null }">
+						<c:if test="${list==null }">
 							<tr>
 								<td colspan="3">해당 데이터 목록이 없습니다.</td>
 							</tr>
-						</c:if> --%>						
+						</c:if>				
 					</tbody>
 				</table>
 				<c:if test='${sid.equals("admin") }'>

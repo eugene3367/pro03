@@ -11,8 +11,8 @@
 body, html { font-family: 'Noto Sans KR', sans-serif; }
 
 .table { min-width:960px; }
-#logo { display:block; width:73px; height:67px; background-image:url("./data/logo.png");
-background-size:75% auto; background-repeat:no-repeat; background-position:center center; }
+/* #logo2 { display:block; width:73px; height:67px; background-color:white; background-image:url("${path0 }/data/logo.png");
+background-size:auto 40%; background-repeat:no-repeat; background-position:center center; } */
 #nav-group { border-bottom:1px solid #ddd; }
 #gnb .navbar-link::after { content:""; display:none; }
 #sidebar .navbar { display:block; width:100%; background-color:transparent; }
@@ -34,7 +34,14 @@ font-weight:500; }
 /*.item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
   -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }*/
 /*.breadcrumb ul li:last-child { padding-right:1.5rem; }*/
-
+.footer { display: block; width: 1344px; margin: 0 auto;}
+.ft_logo { float:left;}
+.ft_content { width: 900px; }
+.select { margin-left: 10px; }
+.mid_box { margin-top: 20px;}
+.dpc { padding-right:34px;}
+.addr { padding-top:20px;}
+.copyright { width:800px;}
 
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>

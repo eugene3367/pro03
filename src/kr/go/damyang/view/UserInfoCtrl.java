@@ -14,11 +14,10 @@ import kr.go.damyang.dto.UserDTO;
 import kr.go.damyang.model.UserDAO;
 
 
-
 @WebServlet("/UserInfoCtrl.do")
 public class UserInfoCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("sid");
@@ -31,6 +30,7 @@ public class UserInfoCtrl extends HttpServlet {
 		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/user/userUpdate.jsp");
 		view.forward(request, response);
+		
 	}
 
 }

@@ -12,10 +12,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>로그인</title>
-<jsp:include page="/head.jsp" />
+<jsp:include page="../head.jsp" />
+<style>
+.title { padding-top:36px; padding-bottom:20px; }
+</style>
 </head>
 <body>
-<jsp:include page="/header.jsp" />
+<jsp:include page="../header.jsp" />
 	<section class="section">
 		<div class="container">
 			<h2 class="title">로그인</h2>
@@ -52,6 +55,6 @@
 			</form>	
 		</div>
 	</section>
-<jsp:include page="/footer.jsp" />
+<jsp:include page="../footer.jsp" />
 </body>
 </html>

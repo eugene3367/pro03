@@ -6,8 +6,8 @@
 <%@ page import="java.text.*, java.net.InetAddress" %>
 <c:set var="path1" value="<%=request.getContextPath() %>" />
 <%
-	String no = request.getParameter("no");
-	String tourno = request.getParameter("tourno");
+	String no = request.getParameter("no");	//1(?)
+	String tourno = request.getParameter("tourno");	// A,B,C...
 %>
 <!DOCTYPE html>
 <html>
@@ -147,7 +147,7 @@
 	function picCheck(){
 		if(document.upload.pos.value=="1" || document.upload.pos.value==1){
 			opener.document.frm1.pic_ck1.value = "yes";
-			opener.document.frm1.pic1.value = document.upload.picname.value;
+	 		opener.document.frm1.pic1.value = document.upload.picname.value;
 		} 
 		window.close();
 	}

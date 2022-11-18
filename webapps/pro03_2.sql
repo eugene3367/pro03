@@ -53,11 +53,42 @@ CREATE TABLE tour(
 	comment1 VARCHAR(1000),
 	comment2 VARCHAR(1000)  
 );
+ALTER TABLE tour ADD COLUMN addr VARCHAR(200);
+
 desc tour;
 
 select * from tour;
 
 commit;
+
+create table qna(
+    no int primary key auto_increment,
+    title varchar(100) not null,
+    content varchar(1000) not null,
+    author varchar(20) not null,
+    regdate datetime default now(),
+    visited int default 0
+    lev int default 0,            
+    parno int DEFAULT 0,           
+    sec char(1),                  
+    visited int default 0
+);
+
+select * from qna;
+drop table qna;
+
+create table impress(
+	no int primary key auto_increment,
+	cate varchar(20),
+	tourno varchar(20),
+	id varchar(30),
+	content varchar(1000),
+	star double,
+	imgSrc varchar(150),
+	regDate datetime default now()
+);
+
+select * from impress;
 
 
 

@@ -15,7 +15,7 @@ import kr.go.damyang.dto.PicDTO;
 import kr.go.damyang.model.TourDAO;
 import net.sf.json.JSONObject;
 
-@WebServlet("/ImgResearchCtrl")
+@WebServlet("/ImgResearchCtrl.do")
 public class ImgResearchCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

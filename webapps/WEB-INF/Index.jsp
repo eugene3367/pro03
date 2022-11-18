@@ -16,7 +16,7 @@
 <body>
   	<jsp:include page="${path1 }/header.jsp" />
 	<h2>${user}님의 테스트 입니다.</h2>
-	<img alt="" src="./data/visual09.png">
+	<img alt="" src="./data/visual09.jpg">
 	<jsp:include page="${path1 }/footer.jsp" />
 </body>
 </html>

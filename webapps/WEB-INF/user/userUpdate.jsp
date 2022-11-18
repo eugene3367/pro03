@@ -14,6 +14,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>회원 정보 수정</title>
 <jsp:include page="/head.jsp" />
+<style>
+.title { padding-top:36px; padding-bottom:20px; }
+#id { width:780px; float:left; margin-right:30px; margin-left:6px; }
+</style>
 </head>
 <body>
 <jsp:include page="/header.jsp" />

@@ -19,6 +19,13 @@ public class Maria {
 	final static String NOTICE_DELETE = "delete from notice where no=?";
 	final static String NOTICE_UPDATE = "update notice set title=?, content=? where no=?";
 	
+	final static String QNA_SELECT_ALL = "select * from qna order by regdate desc";
+	final static String QNA_VISITED_UPDATE = "update qna set visited = visited + 1 where no=?";
+	final static String QNA_SELECT_ONE = "select * from qna where no=?";
+	final static String QNA_INSERT = "insert into qna(title, content) values (?, ?)";
+	final static String QNA_DELETE = "delete from qna where no=?";
+	final static String QNA_UPDATE = "update qna set title=?, content=? where no=?";
+	
 	final static String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, addr) values (?,?,?,?,?,?,?)";
 	final static String USER_LOGIN = "select * from user where id=? and pw=?";
 	final static String USER_ID_CHECK = "select * from user where id=?";
@@ -32,6 +39,10 @@ public class Maria {
 	final static String ADD_TOUR = "insert into tour(tourno, cate, place, commnet1, comment2) values(?,?,?,?,?)";
 	final static String TOUR_LIST_ALL = "select * from tour";
 	final static String TOUR_CATE_LIST = "select a.no, a.tourno, a.cate, a.place, a.comment1, a.comment2, b.picname, b.pos from tour a inner join b on a.tourno=b.tourno where a.cate=? and b.pos=1";
+	
+	final static String TOUR_SEARCH_PLACE_LIST = "select * from tour where place like CONCAT('%',?,'%')"; //'%'+?+'%'
+	final static String TOUR_SEARCH_COMMENT_LIST = "select * from tour where comment2 like ?";
+	final static String TOUR_SEARCH_ALL_LIST = "select * from tour where place like ? or comment2 like ?";
 	final static String TOUR_LIST_DETAIL = "select * from tour where no=?";
 	final static String TOUR_DEL = "delete from tour where no=?";
 	final static String MODIFY_TOUR = "update tour set tourno=?, cate=?, place=?, comment1=?, comment2=? where no=? ";

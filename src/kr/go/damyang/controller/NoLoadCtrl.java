@@ -13,7 +13,7 @@ import kr.go.damyang.model.TourDAO;
 
 import org.json.JSONObject;
 
-@WebServlet("/NoLoadCtrl")
+@WebServlet("/NoLoadCtrl.do")
 public class NoLoadCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -31,7 +31,7 @@ public class ImgUploadCtrl extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		int maxSize = 10*1024*1024;
-		String saveFolder = "D:/eugene/pro01/pro03/Webapps/upload"; //개발자 디렉토리
+		String saveFolder = "D:/eugene/pro01/pro03/webapps/upload"; //개발자 디렉토리
 		String uploadPath = request.getRealPath("/upload"); //서버 디렉토리
 		
 		TourDAO dao = new TourDAO(); 

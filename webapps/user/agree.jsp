@@ -12,6 +12,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>회원 약관 동의</title>
 	<jsp:include page="/head.jsp" />
+<style>
+.title { padding-top:36px; padding-bottom:20px; }
+.agree_fr { width: 900px; white-space:pre-wrap; margin: 10px auto; 
+padding: 24px; border:2px solid #eee; height:600px; overflow-y:auto; }
+</style>
 </head>
 <body>
 <jsp:include page="/header.jsp" />

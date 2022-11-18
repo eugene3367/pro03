@@ -14,7 +14,7 @@ import kr.go.damyang.dto.TourDTO;
 import kr.go.damyang.model.TourDAO;
 
 
-@WebServlet("/GetTourCateListCtrl")
+@WebServlet("/GetTourCateListCtrl.do")
 public class GetTourCateListCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

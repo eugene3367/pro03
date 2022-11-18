@@ -6,8 +6,8 @@
 	<div class="container">
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 		  <div class="navbar-brand">
-		    <a class="navbar-item" href="<%=request.getContextPath() %>/">
-		      <img src="./data/logo.png" width="112" height="28">
+		    <a class="navbar-item" id="logo2" href="<%=request.getContextPath() %>/">
+		    <img alt="상단로고" src="./data/logo.png">
 		    </a>
 		
 		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=B" class="navbar-link">체험</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=B" class="navbar-link cate">체험</a>
 				<div class="navbar-dropdown cate" id="cate02">
 					 <a class="navbar-item">일정별</a>
 					 <a class="navbar-item">권역별</a>
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link">행사</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link cate">행사</a>
 				<div class="navbar-dropdown cate" id="cate03">
 					 <a class="navbar-item">담양의인물</a>
 					 <a class="navbar-item">송강 문학기행</a>
@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div  class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link">축제</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link cate">축제</a>
 				<div class="navbar-dropdown cate" id="cate04">
 					 <a class="navbar-item">담양별빛ㆍ달빛야행(夜行)</a>
 					 <a class="navbar-item">담양에서일주일여행하기</a>
@@ -54,13 +54,13 @@
 				</div>
 			</div>
 			<div  class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=E" class="navbar-link">숙박</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=E" class="navbar-link cate">숙박</a>
 				<div class="navbar-dropdown cate" id="cate05">
 					 <a class="navbar-item">담양의 축제</a>					          
 				</div>
 			</div>			
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=F" class="navbar-link">음식</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=F" class="navbar-link cate">음식</a>
 				<div class="navbar-dropdown cate" id="cate06">
 					 <a class="navbar-item">문화관광해설사</a>
 					 <a class="navbar-item">교통안내</a>
@@ -68,7 +68,7 @@
 				</div>
 			</div> 
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=G" class="navbar-link">쇼핑</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=G" class="navbar-link cate">쇼핑</a>
 				<div class="navbar-dropdown cate" id="cate07">
 					 <a class="navbar-item">여행후기 이벤트</a>
 					 <a class="navbar-item">여행알리미</a>
@@ -76,7 +76,7 @@
 				</div>
 			</div> 
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=H" class="navbar-link">기타</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=H" class="navbar-link cate">기타</a>
 				<div class="navbar-dropdown cate" id="cate08">
 					 <a class="navbar-item">여행후기 이벤트</a>
 					 <a class="navbar-item">여행알리미</a>
@@ -84,19 +84,21 @@
 				</div>
 			</div> 
 			<div class="navbar-item has-dropdown is-hoverable single">
-				<a class="navbar-link">관광안내</a>
+				<a class="navbar-link">함께하는 담양</a>
 				<div class="navbar-dropdown single">
-					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">공지사항</a>					        
+					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">공지사항</a>
+					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetQnaListCtrl.do">묻고 답하기</a>
+					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">이용후기</a>				        
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable single">
 				<a class="navbar-link">담양에 대하여</a>
 				<div class="navbar-dropdown single">
-					 <a class="navbar-item">About</a>
-					 <a class="navbar-item">Jobs</a>
-					 <a class="navbar-item">Contact</a>
+					 <a class="navbar-item">담양소개</a>
+					 <a class="navbar-item">담양 CI/BI</a>
+					 <a class="navbar-item">담양홍보대사</a>
 					 <hr class="navber-divider">
-					 <a class="navbar-item">Report an issue</a>	        
+					 <a class="navbar-item">리플릿</a>	        
 				</div>
 			</div>			
 		  </div>
@@ -161,7 +163,7 @@
 									$("#cate06").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
 								} else if(value[i].cate=="G"){
 									$("#cate07").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-								} else if(value[i].cate=="G"){
+								} else if(value[i].cate=="H"){
 									$("#cate07").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
 								}
 							}

@@ -24,10 +24,10 @@ public class JSONTest3 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        
+		
 		TestDAO dao = new TestDAO();
 		ArrayList<TestDTO> data = dao.testDataAll();
-		
+
 		PrintWriter out = response.getWriter();
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		map.put("data", data);
