@@ -1,13 +1,16 @@
 package kr.go.damyang.dto;
 
 public class QnaDTO {	
-    private int no;
-    private String title;
-    private String content;
-    private String author;
-    private String regdate;
-    private int visited;
-    
+	private int no;	//글번호
+	private String title;	//제목
+	private String content;	//내용
+	private String author;	//작성자 아이디
+	private String regDate;	//작성일
+	private int lev;	//깊이
+	private int parno;	//부모글 번호
+	private String sec;	//비밀글 여부
+	private int visited;	//읽은횟수
+	
 	public int getNo() {
 		return no;
 	}
@@ -32,11 +35,29 @@ public class QnaDTO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getRegdate() {
-		return regdate;
+	public String getRegDate() {
+		return regDate;
 	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+	public int getLev() {
+		return lev;
+	}
+	public void setLev(int lev) {
+		this.lev = lev;
+	}
+	public int getParno() {
+		return parno;
+	}
+	public void setParno(int parno) {
+		this.parno = parno;
+	}
+	public String getSec() {
+		return sec;
+	}
+	public void setSec(String sec) {
+		this.sec = sec;
 	}
 	public int getVisited() {
 		return visited;
@@ -47,8 +68,16 @@ public class QnaDTO {
 	@Override
 	public String toString() {
 		return "QnaDTO [no=" + no + ", title=" + title + ", content=" + content
-				+ ", author=" + author + ", regdate=" + regdate + ", visited="
+				+ ", author=" + author + ", regDate=" + regDate + ", lev="
+				+ lev + ", parno=" + parno + ", sec=" + sec + ", visited="
 				+ visited + "]";
 	}
+	
+	
+	
+	
+    
+	
+	
     		
 }

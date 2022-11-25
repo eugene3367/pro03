@@ -15,80 +15,72 @@
 		      <span aria-hidden="true"></span>
 		      <span aria-hidden="true"></span>
 		    </a>
-		  </div>
-		  
+		  </div>		  
 		  
 		  <div id="navbarBasicExample" class="navbar-menu">
 		    <div class="navbar-start" id="gnb">
 		    <%-- ajax로 메뉴 로딩하여 추가하기 --%>
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=A" class="navbar-link">관광</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=A" class="navbar-link">
+				관광명소</a>
 				<div class="navbar-dropdown cate" id="cate01">
-					 <a class="navbar-item">관광명소</a>
-					 <a class="navbar-item">담양슬로시티</a>
-					 <a class="navbar-item">담양오방길</a>          
+					 <a class="navbar-item">용흥사계곡</a>
+					 <a class="navbar-item">관방제림</a>
+					 <a class="navbar-item">가마골용소</a>					          
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=B" class="navbar-link cate">체험</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=B" class="navbar-link cate">
+				문화예술</a>
 				<div class="navbar-dropdown cate" id="cate02">
-					 <a class="navbar-item">일정별</a>
-					 <a class="navbar-item">권역별</a>
-					 <a class="navbar-item">웰빙코스</a>          
+					 <a class="navbar-item">고하 송진우</a>
+					 <a class="navbar-item">하서 김인후</a>
+					 <a class="navbar-item">서하당 김성원</a>          
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link cate">행사</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=C" class="navbar-link cate">
+				인문학기행</a>
 				<div class="navbar-dropdown cate" id="cate03">
-					 <a class="navbar-item">담양의인물</a>
-					 <a class="navbar-item">송강 문학기행</a>
-					 <a class="navbar-item">담빛영화관</a>          
+					 <a class="navbar-item">담양별빛달빛야행</a>
+					 <a class="navbar-item">담양에서 일주일여행하기</a>					   
 				</div>
 			</div>
 			<div  class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link cate">축제</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=D" class="navbar-link cate">
+				담양의 축제</a>
 				<div class="navbar-dropdown cate" id="cate04">
-					 <a class="navbar-item">담양별빛ㆍ달빛야행(夜行)</a>
-					 <a class="navbar-item">담양에서일주일여행하기</a>
-					 <a class="navbar-item">문화유산</a>          
+					 <a class="navbar-item">용면추월산 벚꽃축제</a>
+					 <a class="navbar-item">담양대나무축제</a>
+					  <a class="navbar-item">고서포도축제</a>						         
 				</div>
 			</div>
 			<div  class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=E" class="navbar-link cate">숙박</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=E" class="navbar-link cate">
+				담양의 음식</a>
 				<div class="navbar-dropdown cate" id="cate05">
-					 <a class="navbar-item">담양의 축제</a>					          
+					 <a class="navbar-item">한우 떡갈비</a>
+					 <a class="navbar-item">대통밥</a>
+					 <a class="navbar-item">담양국수</a>							          
 				</div>
 			</div>			
 			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=F" class="navbar-link cate">음식</a>
+				<a href="${path2 }/GetTourCateListCtrl.do?cate=F" class="navbar-link cate">
+				담양의 숙소</a>
 				<div class="navbar-dropdown cate" id="cate06">
-					 <a class="navbar-item">문화관광해설사</a>
-					 <a class="navbar-item">교통안내</a>
-					 <a class="navbar-item">음식</a>          
+					 <a class="navbar-item">힐링민박</a>
+					 <a class="navbar-item">휴가림</a>
+					 <a class="navbar-item">행복나드리 민박</a>          
 				</div>
-			</div> 
-			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=G" class="navbar-link cate">쇼핑</a>
-				<div class="navbar-dropdown cate" id="cate07">
-					 <a class="navbar-item">여행후기 이벤트</a>
-					 <a class="navbar-item">여행알리미</a>
-					 <a class="navbar-item">여행문의</a>          
-				</div>
-			</div> 
-			<div class="navbar-item has-dropdown is-hoverable">
-				<a href="${path2 }/GetTourCateListCtrl.do?cate=H" class="navbar-link cate">기타</a>
-				<div class="navbar-dropdown cate" id="cate08">
-					 <a class="navbar-item">여행후기 이벤트</a>
-					 <a class="navbar-item">여행알리미</a>
-					 <a class="navbar-item">여행문의</a>          
-				</div>
-			</div> 
+			</div> 			
 			<div class="navbar-item has-dropdown is-hoverable single">
 				<a class="navbar-link">함께하는 담양</a>
 				<div class="navbar-dropdown single">
-					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">공지사항</a>
-					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetQnaListCtrl.do">묻고 답하기</a>
-					 <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">이용후기</a>				        
+					 <a class="navbar-item" href="${path2 }/GetNoticeListCtrl.do">공지사항</a>
+					 <a class="navbar-item" href="${path2 }/GetQnaListCtrl.do">묻고 답하기</a>
+					 <a class="navbar-item" href="${path2 }/GetImpressListCtrl.do">이용후기</a>	
+					 <a class="navbar-item" href="${path2 }/GetDatabankListCtrl.do">자료실</a>
+					 <a class="navbar-item" href="${path2 }/impress/online.jsp">온라인 상담</a>			        
 				</div>
 			</div>
 			<div class="navbar-item has-dropdown is-hoverable single">
@@ -104,15 +96,15 @@
 		  </div>
 		  
 		  
-		  <div class="navbar-end">
+		  <div class="navbar-end" id="tnb">
 		    <div class="navbar-item">
 		    	<c:if test="${empty sid }">
 			      <div class="buttons">
 			        <a class="button is-primary" href="${path2}/user/agree.jsp">
-			          <strong>Sign up</strong>
+			          <strong>회원가입</strong>
 			        </a>
 			        <a class="button is-focused" href="${path2 }/user/login.jsp">
-			          Log in
+			         	로그인
 			        </a>
 			      </div>
 				</c:if>
@@ -122,7 +114,7 @@
 			          <strong>회원정보 보기</strong>
 			        </a>
 			        <a class="button is-focused" href="${path2 }/UserLogoutCtrl.do">
-			          Logout
+			          	로그아웃
 			        </a>
 			        <c:if test='${sid.equals("admin")}'>
 			        <a class="button is-focused" href="${path2 }/AdminCtrl.do">관리자</a>
@@ -161,11 +153,7 @@
 									$("#cate05").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
 								} else if(value[i].cate=="F"){
 									$("#cate06").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-								} else if(value[i].cate=="G"){
-									$("#cate07").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-								} else if(value[i].cate=="H"){
-									$("#cate07").append("<a href='${path2 }/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-								}
+								} 
 							}
 						}
 					})

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import kr.go.damyang.dto.QnaDTO;
 
+
 public class QnaDAO {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
@@ -25,7 +26,7 @@ public class QnaDAO {
 				dto.setNo(rs.getInt("no"));
 				dto.setTitle(rs.getString("title"));
 				dto.setContent(rs.getString("content"));
-				dto.setRegdate(rs.getString("regdate"));
+				dto.setRegDate(rs.getString("regdate"));
 				dto.setVisited(rs.getInt("visited"));
 				qnaList.add(dto);
 			}
@@ -60,7 +61,7 @@ public class QnaDAO {
 				dto.setNo(rs.getInt("no"));
 				dto.setTitle(rs.getString("title"));
 				dto.setContent(rs.getString("content"));
-				dto.setRegdate(rs.getString("regdate"));
+				dto.setRegDate(rs.getString("regdate"));
 				dto.setVisited(rs.getInt("visited"));
 			}
 
@@ -79,14 +80,32 @@ public class QnaDAO {
 	}
 	
 	public int addQna(QnaDTO dto){
-		int cnt = 0;
+		int cnt = 0, no;
 		try {
 			con = Maria.getConnection();
 			//글 추가
 			pstmt = con.prepareStatement(Maria.QNA_INSERT);
-			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(1, dto.getTitle()); 
 			pstmt.setString(2, dto.getContent());
-			cnt = pstmt.executeUpdate();
+			pstmt.setString(3, dto.getAuthor());
+			pstmt.setInt(4, dto.getLev());
+			pstmt.setString(5, dto.getSec());
+			pstmt.executeUpdate();
+			pstmt.close();
+			
+			pstmt = con.prepareStatement(Maria.QNA_SELECT_UP);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				no = rs.getInt("no");
+			} else {
+				no = 0;
+			}
+			rs.close();
+			pstmt.close();
+			
+			pstmt = con.prepareStatement(Maria.QNA_INSERT_UPDATE);
+			pstmt.setInt(1, no);
+			cnt = pstmt.executeUpdate();			
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
 			e.printStackTrace();
@@ -100,6 +119,34 @@ public class QnaDAO {
 		}
 		return cnt;
 	}
+	
+	public int addReply(QnaDTO dto){
+		int cnt = 0;
+		try {
+			con = Maria.getConnection();
+			//답변글 추가
+			pstmt = con.prepareStatement(Maria.QNA_REPLY_INSERT);
+			pstmt.setString(1, dto.getTitle()); 
+			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getAuthor());
+			pstmt.setInt(4, dto.getLev());
+			pstmt.setInt(5, dto.getParno());
+			pstmt.setString(6, dto.getSec());
+			pstmt.executeUpdate();			
+		} catch(ClassNotFoundException e){
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();
+		} catch(SQLException e){
+			System.out.println("SQL 구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");
+		} finally {
+			Maria.close(pstmt, con);
+		}
+		return cnt;
+	}
+	
 	
 	public int delQna(int no){
 		int cnt = 0;

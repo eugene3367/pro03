@@ -60,41 +60,34 @@
 			      		<td><input type="hidden" name="cate0" id="cate0" value="${dto.cate }" />
   						<c:set var="cate" value="${dto.cate }" /> 
 						<c:if test="${cate eq 'A' }">
-						<span>관광</span>
+						<span>관광명소</span>
 						</c:if>
 						<c:if test="${cate eq 'B' }">
-						<span>체험</span>
+						<span>문화예술</span>
 						</c:if>
 						<c:if test="${cate eq 'C' }">
-						<span>행사</span>
+						<span>인문학기행</span>
 						</c:if>
-						<c:if test="${grade eq 'D' }">
-						<span>축제</span>
+						<c:if test="${cate eq 'D' }">
+						<span>담양의 축제</span>
 						</c:if>
 						<c:if test="${cate eq 'E' }">
-						<span>숙박</span>
+						<span>담양의 음식</span>
 						</c:if>
 						<c:if test="${cate eq 'F' }">
-						<span>음식</span>
+						<span>담양의 숙소</span>
 						</c:if>
-						<c:if test="${cate eq 'G' }">
-						<span>쇼핑</span>
-						</c:if>
-						<c:if test="${cate eq 'H' }">
-						<span>기타</span>
-						</c:if>
+
 						<div class="field">
 			  				<div class="select">
 								<select name="cate" id="cate" class="select" onchange="changeTourNo()" required>
 									<option value="">선택</option>
-									<option value="A">관광</option>
-									<option value="B">체험</option>
-									<option value="C">행사</option>
-									<option value="D">축제</option>
-									<option value="E">숙박</option>
-									<option value="F">음식</option>
-									<option value="G">쇼핑</option>
-									<option value="H">기타</option>
+									<option value="A">관광명소</option>
+									<option value="B">문화예술</option>
+									<option value="C">인문학기행</option>
+									<option value="D">담양의 축제</option>
+									<option value="E">담양의 음식</option>
+									<option value="F">담양의 숙소</option>
 								</select>
 							</div>
 						</div>
@@ -118,8 +111,8 @@
 						<td><textarea class="textarea" name="comment1" id="comment1" cols="80" rows="8" maxlength="500" required>${dto.comment1 }</textarea></td>
 					</tr>
 					<tr>
-						<th><label for="comment2" class="label">장소 상세 설명</label></th>
-						<td><textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500" required>${dto.comment2 }</textarea></td>
+						<th><label for="comment2" class="label">장소 부가 설명</label></th>
+						<td><textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500" >${dto.comment2 }</textarea></td>
 					</tr>
 				    <tr>
 				      <th><label for="address1" class="label">주소</label></th>

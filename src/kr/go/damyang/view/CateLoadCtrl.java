@@ -13,26 +13,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.go.damyang.dto.TourDTO;
 import kr.go.damyang.model.TourDAO;
-import net.sf.json.JSONObject;
+import net.sf.json.*;
 
-
-@WebServlet("/MemuLoadCtrl")
-public class MemuLoadCtrl extends HttpServlet {
+@WebServlet("/CateLoadCtrl")
+public class CateLoadCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+        response.setContentType("application/json");
 		
+		String cate = request.getParameter("cate");
+		System.out.println("카테고리: "+cate);
 		TourDAO dao = new TourDAO();
 		
-		ArrayList<TourDTO> data = dao.JSONPlaceList();
+		ArrayList<TourDTO> result = dao.getTourCateList(cate);
 
 		PrintWriter out = response.getWriter();
 		HashMap<String,Object> map = new HashMap<String, Object>();
-		map.put("data", data);
+		map.put("result", result);
 		
 		JSONObject json = new JSONObject();
 		json.putAll(map);

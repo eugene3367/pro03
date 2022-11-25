@@ -30,28 +30,22 @@
 		<li><a href="${path1 }/GetTourCateListCtrl.do?cate=${dto.cate }">
 				<c:set var="cate" value="${dto.cate }" /> 
 				<c:if test="${cate eq 'A' }">
-				<span>관광</span>
+				<span>관광명소</span>
 				</c:if>
 				<c:if test="${cate eq 'B' }">
-				<span>체험</span>
+				<span>문화예술</span>
 				</c:if>
 				<c:if test="${cate eq 'C' }">
-				<span>행사</span>
+				<span>인문학기행</span>
 				</c:if>
-				<c:if test="${grade eq 'D' }">
-				<span>축제</span>
+				<c:if test="${cate eq 'D' }">
+				<span>담양의 축제</span>
 				</c:if>
 				<c:if test="${cate eq 'E' }">
-				<span>숙박</span>
+				<span>담양의 음식</span>
 				</c:if>
 				<c:if test="${cate eq 'F' }">
-				<span>음식</span>
-				</c:if>
-				<c:if test="${cate eq 'G' }">
-				<span>쇼핑</span>
-				</c:if>
-				<c:if test="${cate eq 'H' }">
-				<span>기타</span>
+				<span>담양의 숙소</span>
 				</c:if>
 			</a>
 		</li>
@@ -93,28 +87,22 @@
 	  					<td>
 							<c:set var="cate" value="${dto.cate }" /> 
 							<c:if test="${cate eq 'A' }">
-							<span>관광</span>
+							<span>관광명소</span>
 							</c:if>
 							<c:if test="${cate eq 'B' }">
-							<span>체험</span>
+							<span>문화예술</span>
 							</c:if>
 							<c:if test="${cate eq 'C' }">
-							<span>행사</span>
+							<span>인문학기행</span>
 							</c:if>
-							<c:if test="${grade eq 'D' }">
-							<span>축제</span>
+							<c:if test="${cate eq 'D' }">
+							<span>담양의 축제</span>
 							</c:if>
 							<c:if test="${cate eq 'E' }">
-							<span>숙박</span>
+							<span>담양의 음식</span>
 							</c:if>
 							<c:if test="${cate eq 'F' }">
-							<span>음식</span>
-							</c:if>
-							<c:if test="${cate eq 'G' }">
-							<span>쇼핑</span>
-							</c:if>
-							<c:if test="${cate eq 'H' }">
-							<span>기타</span>
+							<span>담양의 숙소</span>
 							</c:if>
 						</td>
 					</tr>
@@ -151,11 +139,11 @@
 			<div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; "></div>
 			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 			<!-- https://developers.kakao.com/ 회원가입 후 -> 내 애플리케이션 -> 애플리케이션 추가 -> 추가된 해당 앱을 클릭하면 발급받은  API키를 확인할 수 있음  -->			
-			<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은API키&​libraries=services"></script>
+			<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=34df602b447b7c5d3ff986f4e632cd38&​libraries=services"></script>
 			<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    mapOption = { //128.433182, 34.8544227
-			        center: new kakao.maps.LatLng(34.8544227, 128.433182), // 지도의 중심좌표
+			        center: new kakao.maps.LatLng(35.3408869, 126.8890327), // 지도의 중심좌표
 			        level: 7 // 지도의 확대 레벨
 			    };  
 			

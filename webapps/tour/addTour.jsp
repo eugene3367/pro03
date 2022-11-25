@@ -27,14 +27,12 @@
 						<div class="select">
 						    <select name="cate" id="cate" class="select" onchange="changeTourNo()" required>
 							  	<option value="">선택</option>
-							    <option value="A">관광</option>
-							    <option value="B">체험</option>
-							    <option value="C">행사</option>
-							    <option value="D">축제</option>
-							    <option value="E">숙박</option>
-							    <option value="F">음식</option>
-							    <option value="G">쇼핑</option>
-							    <option value="H">기타</option>
+							    <option value="A">관광명소</option>
+							    <option value="B">문화예술</option>
+							    <option value="C">인문학기행</option>
+							    <option value="D">담양의 축제</option>
+							    <option value="E">담양의 음식</option>
+							    <option value="F">담양의 숙소</option>
 							    <input type="hidden" id="tourno" name="tourno" value="">
 						    </select> 						    
 						</div>
@@ -62,18 +60,18 @@
 					</div>
 
 					<div class="field">
-					  <label class="label">장소 상세설명</label>
+					  <label class="label">장소 부가설명</label>
 					  <div class="control has-icons-left has-icons-right">
-					    <textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500" required></textarea>
+					    <textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500"></textarea>
 					  </div>
-					  <p class="help is-success">장소의 상세설명을 넣어 주시기 바랍니다.</p>
+					  <p class="help is-success">장소의 부가설명을 넣어 주시기 바랍니다.</p>
 					</div>
 					
 					<div class="field">
 					  	<label class="label">주소</label>
-					    <input type="text" name="address1" id="address1" class="input" style="margin-bottom:10px;" placeholder="기본 주소" required>
-					    <input type="text" name="address2" id="address2" class="input" style="margin-bottom:10px;" placeholder="상세 주소" required>
-					    <input type="text" name="postcode" id="postcode" class="input" style="margin-bottom:10px;" placeholder="우편 번호" required>
+					    <input type="text" name="address1" id="address1" class="input" style="margin-bottom:10px;" placeholder="기본 주소" >
+					    <input type="text" name="address2" id="address2" class="input" style="margin-bottom:10px;" placeholder="상세 주소" >
+					    <input type="text" name="postcode" id="postcode" class="input" style="margin-bottom:10px;" placeholder="우편 번호" >
 					    <button id="post_btn" onclick="findAddr()" class="button is-info">우편번호 검색</button>
 					</div>					
 					
@@ -102,7 +100,7 @@
 							alert("카테고리를 선택하지 않으셨습니다.");
 							return;
 						}
-						var win1 = window.open("imgUpload.jsp?no="+no+"&tourno="+tourno, "win", "width=850, height=400");
+						var win1 = window.open("${path1 }/tour/imgUpload.jsp?no="+no+"&tourno="+tourno, "win", "width=850, height=400");
 					}
 					
 					function changeTourNo(){

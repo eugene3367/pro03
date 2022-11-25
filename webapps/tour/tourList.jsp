@@ -55,28 +55,22 @@
 					<td>
 					<c:set var="cate" value="${dto.cate }" /> 
 						<c:if test="${cate eq 'A' }">
-						<span>관광</span>
+						<span>관광명소</span>
 						</c:if>
 						<c:if test="${cate eq 'B' }">
-						<span>체험</span>
+						<span>문화예술</span>
 						</c:if>
 						<c:if test="${cate eq 'C' }">
-						<span>행사</span>
+						<span>인문학기행</span>
 						</c:if>
-						<c:if test="${grade eq 'D' }">
-						<span>축제</span>
+						<c:if test="${cate eq 'D' }">
+						<span>담양의 축제</span>
 						</c:if>
 						<c:if test="${cate eq 'E' }">
-						<span>숙박</span>
+						<span>담양의 음식</span>
 						</c:if>
 						<c:if test="${cate eq 'F' }">
-						<span>음식</span>
-						</c:if>
-						<c:if test="${cate eq 'G' }">
-						<span>쇼핑</span>
-						</c:if>
-						<c:if test="${cate eq 'H' }">
-						<span>기타</span>
+						<span>담양의 숙소</span>
 						</c:if>
 					</td>
 					<td>

@@ -178,7 +178,7 @@ public class UserDAO {
 		
 		try{
 			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.USER_ID_ALL);
+			pstmt = con.prepareStatement(Maria.USER_ALL);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()){

@@ -18,16 +18,16 @@ public class DelQnaCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
 		int no = Integer.parseInt(request.getParameter("no"));
-		
+		int parno = Integer.parseInt(request.getParameter("parno"));
+
 		QnaDAO dao = new QnaDAO();
-		int cnt = dao.delQna(no);
+		int cnt = dao.delQna(no); 
 		
 		if(cnt>=1){
 			response.sendRedirect("GetQnaListCtrl.do");
 		} else {
-			response.sendRedirect("GetQnaCtrl.do?no="+no);
+			response.sendRedirect("GetQnaDetailCtrl.do?no="+no);
 		}
 	}
 

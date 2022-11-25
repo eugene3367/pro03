@@ -12,22 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import kr.go.damyang.dto.QnaDTO;
 import kr.go.damyang.model.QnaDAO;
 
-@WebServlet("/GetQnaCtrl.do")
-public class GetQnaCtrl extends HttpServlet {
+@WebServlet("/GetQnaDetailCtrl.do")
+public class GetQnaDetailCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int no = Integer.parseInt(request.getParameter("no"));
-		
+			
+		//결과를 데이터베이스로 부터 받아서 VO에 저장
 		QnaDAO dao = new QnaDAO();
-		QnaDTO dto = dao.getQna(no);
+		QnaDTO vo = dao.getQna(no);
+
+		request.setAttribute("vo", vo);
 		
-		//dao로 부터 받은 데이터를 view에 디스패치함
-		request.setAttribute("dto", dto);
-		
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/qna/qnaDetail.jsp");
-		view.forward(request, response);
-		
+		//qna/qnaDetail.jsp 에 포워딩
+		RequestDispatcher view = request.getRequestDispatcher("./qna/qnaDetail.jsp");
+		view.forward(request, response);	
 	}
 
 }
