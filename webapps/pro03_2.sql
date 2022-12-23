@@ -32,6 +32,7 @@ create table qna(
     visited INT DEFAULT 0
 );
 DESC qna;
+select * from qna;
 INSERT INTO qna(title, content, author, lev, sec) VALUES (?,?,?,?,?);
 INSERT INTO qna(title, content, author, lev, parno, sec) VALUES (?,?,?,?,?,?);
 SELECT no FROM qna ORDER BY regdate DESC limit 1;
